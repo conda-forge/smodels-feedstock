@@ -1,5 +1,5 @@
 {% set name = "smodels" %}
-{% set version = "2.3.3" %}
+{% set version = "3.0.2" %}
 # Python 3.7 enforced by pyhf requirement
 {% set python_min = "3.7" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smodels-{{ version }}.tar.gz
-  sha256: 19a8c4070d467a1acc6c5c1434b4bf975cb1adccd5a0432df2c1e411b6610cb0
+  sha256: f584e1bcbb04e96f4ad31c4f74694c0725e347c9d6ca887350a47c8a1af3782a
   patches:
     - add-build-system.patch
     - add-python_requires.patch
