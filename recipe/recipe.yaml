@@ -1,0 +1,72 @@
+schema_version: 1
+
+context:
+  name: smodels
+  version: 2.3.3
+  # Python 3.7 enforced by pyhf requirement
+  python_min: 3.7
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/smodels-${{ version }}.tar.gz
+  sha256: 19a8c4070d467a1acc6c5c1434b4bf975cb1adccd5a0432df2c1e411b6610cb0
+  patches:
+    - add-build-system.patch
+    - add-python_requires.patch
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - smodels-config=smodels.installation:main
+      - runSModelS.py=smodels.tools.runSModelS:main
+      - smodelsTools.py=smodels.tools.smodelsTools:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - docutils >=0.3
+    - numpy >=1.18.0,!=1.21.*
+    - scipy >=1.0.0
+    - unum >=4.0.0
+    - requests >=2.0.0
+    - pyslha >=3.1.0
+    - pyhf >=0.6.1
+    - jsonpatch >=1.25
+    - jsonschema >=3.2.0
+
+tests:
+  - python:
+      imports:
+        - smodels
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - smodels-config --help
+      - runSModelS.py --help
+      - smodelsTools.py --help
+
+about:
+  summary: A tool for interpreting simplified-model results from the LHC
+  license: GPL-3.0-or-later
+  license_file: smodels/COPYING
+  homepage: http://smodels.github.io/
+  repository: https://github.com/SModelS/smodels/
+  documentation: http://smodels.github.io/
+
+extra:
+  recipe-maintainers:
+    - matthewfeickert
