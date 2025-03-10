@@ -1,11 +1,11 @@
-From cc2f96d507c9c53834ea6298407963deb9342ecf Mon Sep 17 00:00:00 2001
+From b4b03a5d51b2a055ba05fed66b8b2c2f42bd3028 Mon Sep 17 00:00:00 2001
 From: Matthew Feickert <matthew.feickert@cern.ch>
-Date: Mon, 10 Mar 2025 23:52:30 +0100
+Date: Tue, 11 Mar 2025 00:16:55 +0100
 Subject: [PATCH] fix: Add missing smodels/tools/printers sdist files
 
 * As the add-printers-to-packaging.patch only went in to v3.0.3 the
   smodels/tools/printers directory was never being added to the
-  sdist when it was built and so the sdists are permenenlty broken.
+  sdist when it was built and so the sdists are permanently broken.
   To fix this requires adding in all the missing files in a patch.
 ---
  smodels/tools/printers/__init__.py       |   5 +
