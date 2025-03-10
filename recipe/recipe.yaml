@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: smodels
-  version: 3.0.2
+  version: 3.0.3
   # Python 3.8 enforced by numpy requirement
   python_min: 3.8
 
@@ -12,13 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/smodels-${{ version }}.tar.gz
-  sha256: f584e1bcbb04e96f4ad31c4f74694c0725e347c9d6ca887350a47c8a1af3782a
-  patches:
-    - add-build-system.patch
-    - add-python_requires.patch
-    - add-missing-smodels-tools-printers-sdist-files.patch
-    - fix-smodelsLogging-import.patch
-    - add-printers-to-packaging.patch
+  sha256: add7291375bcd31c55eb1a6b70ad2397f4ea0c44476e177842f0b469e78c3209
 
 build:
   number: 0
