@@ -1,0 +1,34 @@
+From 21e0eaf9bb0411d6b39511103e51881af0dc3735 Mon Sep 17 00:00:00 2001
+From: Wolfgang Waltenberger <wolfgang.waltenberger@gmail.com>
+Date: Thu, 27 Feb 2025 15:56:56 +0100
+Subject: [PATCH] fix old path
+
+---
+ smodels/installation.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/smodels/installation.py b/smodels/installation.py
+index 276da71aa..7fceedafa 100755
+--- a/smodels/installation.py
++++ b/smodels/installation.py
+@@ -184,7 +184,7 @@ def banner():
+ def fixpermissions():
+     """ make sure that all filepermissions are such that
+         we can compile the wrappers for pythia and nllfast. """
+-    from smodels.tools.smodelsLogging import logger
++    from smodels.base.smodelsLogging import logger
+     import glob
+     Dir = "%ssmodels/lib/" % installDirectory()
+     try:
+@@ -208,7 +208,7 @@ def databasePath ( label ):
+     :returns: URL, e.g. https://smodels.github.io/database/official
+     """
+     if not label in __dblabels__:
+-        from smodels.tools.smodelsLogging import logger
++        from smodels.base.smodelsLogging import logger
+         logger.warning ( "cannot identify label %s" % label )
+         return label
+     if label == None:
+-- 
+2.48.1
+
