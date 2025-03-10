@@ -1,11 +1,11 @@
 From 236b56b10cb0e4adb32653788b4ea11a2b5ebb3d Mon Sep 17 00:00:00 2001
 From: Matthew Feickert <matthew.feickert@cern.ch>
 Date: Mon, 24 Feb 2025 00:41:20 -0600
-Subject: [PATCH] build: Add python_requires lower bound
+Subject: [PATCH] build: Update python_requires to Python 3.8
 
-* Python 3.7 is already effectively enforced by the pyhf requirement, but this
-  metadata is crucial for installers to not get incorrect versions that are
-  broken at install.
+* As numpy >=1.22.0 is required, and that support Python 3.8+, update
+  python_requires to Python 3.8.
+   - c.f. https://pypi.org/project/numpy/1.22.0/
 ---
  setup.py | 1 +
  1 file changed, 1 insertion(+)
@@ -18,7 +18,7 @@ index f7ac807ed..ee8d194cb 100755
                             'runSModelS.py=smodels.tools.runSModelS:main',
                             'smodelsTools.py=smodels.tools.smodelsTools:main' ]
      },
-+    python_requires='>=3.7',
++    python_requires='>=3.8',
      install_requires=requirements(),
      data_files=dataFiles() ,
      description=("A tool for interpreting simplified-model results from the "

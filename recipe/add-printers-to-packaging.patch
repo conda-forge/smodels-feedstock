@@ -1,0 +1,24 @@
+From bd4176df037dfce5301803cf6f69f8ce8984a24c Mon Sep 17 00:00:00 2001
+From: Wolfgang Waltenberger <wolfgang.waltenberger@gmail.com>
+Date: Thu, 27 Feb 2025 16:34:15 +0100
+Subject: [PATCH] printers added in packages
+
+---
+ setup.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/setup.py b/setup.py
+index f7ac807ed..0c92e7975 100755
+--- a/setup.py
++++ b/setup.py
+@@ -142,6 +142,7 @@ setup(
+               'smodels.decomposition',
+               'smodels.matching',
+               'smodels.tools',
++              'smodels.tools.printers',
+               'smodels.base',
+               'smodels.statistics',
+               'smodels.experiment'],
+-- 
+2.48.1
+
