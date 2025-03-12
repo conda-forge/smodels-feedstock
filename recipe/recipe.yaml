@@ -13,9 +13,11 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/smodels-${{ version }}.tar.gz
   sha256: add7291375bcd31c55eb1a6b70ad2397f4ea0c44476e177842f0b469e78c3209
+  patches:
+    - package-check_fortran_compiler.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
