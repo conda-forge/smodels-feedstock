@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: smodels
-  version: "3.0.3.post1"
+  version: "3.1.0"
   # Python 3.8 enforced by numpy requirement
   python_min: 3.8
 
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/smodels-${{ version }}.tar.gz
-  sha256: b711b438b0371aafac09a979f71f3ed79785dd1d5169f3c56303a0dbd3b2282d
+  sha256: e9981005e20302d49ef6fc4c833bb977cedaf07a4b276bb837b44ca3023873e2
 
 build:
   number: 0
