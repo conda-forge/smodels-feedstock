@@ -3,21 +3,20 @@ schema_version: 1
 context:
   name: smodels
   version: "3.2.0"
-  # Python 3.9 enforced by numpy requirement
-  python_min: "3.9"
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/smodels-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/s/smodels/smodels-${{ version }}.tar.gz
   sha256: 17059b3fde473ff00e17bd1b5117fa3a1d75db3d0903f401a4ee5eb2d11ad549
 
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv
   python:
     entry_points:
       - smodels-config=smodels.installation:main
