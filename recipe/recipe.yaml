@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: smodels
-  version: "3.1.1"
+  version: "3.2.0"
   # Python 3.9 enforced by numpy requirement
   python_min: "3.9"
 
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/smodels-${{ version }}.tar.gz
-  sha256: 6b3d8bd8c0e13e5e0bbf53e8541788b84fbc1f6e12229d481e09d0ea7a47fa50
+  sha256: 17059b3fde473ff00e17bd1b5117fa3a1d75db3d0903f401a4ee5eb2d11ad549
 
 build:
   number: 0
@@ -33,7 +33,7 @@ requirements:
     - python >=${{ python_min }}
     - docutils >=0.3
     - numpy >=2.0.0
-    - scipy >=1.0.0,!=1.16.0,!=1.16.1,!=1.16.2
+    - scipy >=1.15.0,!=1.16.0,!=1.16.1,!=1.16.2
     - sympy >=1.0.0
     - unum >=4.0.0
     - requests >=2.0.0
@@ -41,6 +41,8 @@ requirements:
     - pyhf >=0.6.1
     - jsonpatch >=1.25
     - jsonschema >=3.2.0
+    - onnx >=1.10.0
+    - onnxruntime >=1.20.0
 
 tests:
   - python:
