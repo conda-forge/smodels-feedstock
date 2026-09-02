@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: smodels
-  version: "3.1.1"
+  version: "3.2.0"
   # Python 3.9 enforced by numpy requirement
   python_min: "3.9"
 
@@ -33,7 +33,7 @@ requirements:
     - python >=${{ python_min }}
     - docutils >=0.3
     - numpy >=2.0.0
-    - scipy >=1.0.0,!=1.16.0,!=1.16.1,!=1.16.2
+    - scipy >=1.15.0,!=1.16.0,!=1.16.1,!=1.16.2
     - sympy >=1.0.0
     - unum >=4.0.0
     - requests >=2.0.0
@@ -41,6 +41,8 @@ requirements:
     - pyhf >=0.6.1
     - jsonpatch >=1.25
     - jsonschema >=3.2.0
+    - onnx >=1.10.0
+    - onnxruntime >=1.20.0
 
 tests:
   - python:
