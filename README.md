@@ -195,6 +195,3 @@ Feedstock Maintainers
 * [@WolfgangWaltenberger](https://github.com/WolfgangWaltenberger/)
 * [@matthewfeickert](https://github.com/matthewfeickert/)
 
-
-<!-- dummy commit to enable rerendering -->
-
